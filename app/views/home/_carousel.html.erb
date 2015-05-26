@@ -1,0 +1,97 @@
+<!-- Header Carousel -->
+
+<% @services = Service.all %>
+
+<header id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% servicecount = 0 %>
+    <% @services.each do |service| %>
+        <li data-target="#myCarousel" data-slide-to="<%= servicecount %>" <% if servicecount == 0 %>  class="active" <% end %>></li>
+        <% servicecount = servicecount + 1 %>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <% servicecount = 0 %>
+    <% @services.each do |service| %>
+        <% if servicecount == 0 %>
+            <% activeclass = "item active" %>
+        <% else %>
+            <% activeclass = 'item' %>
+        <% end %>
+        <div class="<%= activeclass %>">
+           <% if !service.image_file.blank? %>
+                <% service_img = 'assets/images/' + service.image_file %>
+           <% else %>
+                <% service_img = 'assets/images/eurautstretch.jpg' %>
+
+            <% end %>
+              <div class="fill" style="background-image:url(<%= service_img %>);">
+         </div>
+
+          <div class="carousel-caption" style="text-align: right">
+            <h1 class="shadow"><%= service.name %></h1>
+            <%= link_to service do %>
+                ...read more
+            <% end %>
+          </div>
+        </div>
+        <% servicecount = servicecount + 1 %>
+    <% end %>
+
+
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</header>
+<!--
+<header id="myCarousel" class="carousel slide">
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="fill" style="background-image:url('/assets/images/dash1.jpg');"></div>
+      <div class="carousel-caption">
+        <h2>40 years of Experience</h2>
+      </div>
+    </div>
+    <div class="item">
+      <div class="fill" style="background-image:url('/assets/images/stock1.jpg');"></div>
+      <div class="carousel-caption">
+        <h2>Certified Technicians</h2>
+        <img src="/assets/ase1d_on_cutup_06.gif">
+      </div>
+    </div>
+    <div class="item">
+        <div class="fill" style="background-image:url('/assets/images/digital.jpg');"></div>
+        <div class="carousel-caption">
+          <h2>Same Day Service</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+</header>
+-->

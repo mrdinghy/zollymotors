@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user_id %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @review.manufacturer_id %>
+</p>
+
+<p>
+  <strong>Stars ease:</strong>
+  <%= @review.stars_ease %>
+</p>
+
+<p>
+  <strong>Stars quality:</strong>
+  <%= @review.stars_quality %>
+</p>
+
+<p>
+  <strong>Stars price:</strong>
+  <%= @review.stars_price %>
+</p>
+
+<p>
+  <strong>Stars ontime:</strong>
+  <%= @review.stars_ontime %>
+</p>
+
+<p>
+  <strong>Stars attention:</strong>
+  <%= @review.stars_attention %>
+</p>
+
+<p>
+  <strong>Service date:</strong>
+  <%= @review.service_date %>
+</p>
+
+<p>
+  <strong>Review note:</strong>
+  <%= @review.review_note %>
+</p>
+
+<p>
+  <strong>Recommended:</strong>
+  <%= @review.recommended %>
+</p>
+
+<p>
+  <strong>Car model:</strong>
+  <%= @review.car_model %>
+</p>
+
+<p>
+  <strong>Car year:</strong>
+  <%= @review.car_year %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

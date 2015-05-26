@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Specialty Services @ Zolly Motors</title>
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%#= csrf_meta_tags %>
+  <!-- Bootstrap Core CSS -->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="/assets/css/modern-business.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+  <style>
+      .ss  {
+          font-family: 'Exo', sans-serif;
+      }
+      .ss12 {font-family: 'Exo', sans-serif; font-size: 12px;}
+      .ss14 {font-family: 'Exo', sans-serif; font-size: 14px;}
+      .ss16 {font-family: 'Exo', sans-serif; font-size: 16px;}
+      .ss18 {font-family: 'Exo', sans-serif; font-size: 18px;}
+      .ss24 {font-family: 'Exo', sans-serif; font-size: 24px;}
+      .ss36 {font-family: 'Exo', sans-serif; font-size: 36px;}
+      .ss44 {font-family: 'Exo', sans-serif; font-size: 44px;}
+
+      .fadein { position:relative; width:500px; height:150px; }
+      .fadein img { position:absolute; left:0; top:0; }
+
+      div.carlist {
+          background-color: #67b168;
+          font-family: 'Exo', sans-serif;
+          font-size: 18px;
+      }
+
+      #parent div {
+          display:none;
+          position: relative;
+          top: 0;
+          left: 0;
+          font-family: 'Exo', sans-serif;
+          font-size: 28px;
+      }
+      #parent div:first-child {
+          display:block;
+      }
+      div.parent {background:red}
+
+      #parent > div{
+          width:1200px;
+          height:0px;
+      }
+      .shadow
+      {
+          text-shadow: 2px 2px #ff0000;
+          font-size: 48px;
+      }
+  </style>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body class="ss">
+<%= render 'layouts/navbar' %>
+<% if params[:controller] == 'home' and params[:action] == 'index' %>
+
+    <%= render 'home/carousel' %>
+<% end %>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="row">
+
+      <div id="parent">
+
+        <div id="box1" class="box">Audi BMW Mercedes Porsche Volkswagen</div>
+        <div id="box2" class="box" style="text-align:right">Jaguar Landrover Mini</div>
+        <div id="box3" class="box">Saab Volvo</div>
+        <div id="box4" class="box">Acura Honda Lexus Mazda Nissan Saturn Toyota</div>
+        <div id="box5" class="box" style="text-align:right">GM Ford Chrysler</div>
+      </div>
+    </div></div></nav>
+<hr>
+<!-- Navigation -->
+<!--<p class="notice"><%#= notice %></p>
+<p class="alert"><%#= alert %></p> -->
+<%#= render 'home/phone_numbers' %>
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <br><br>
+  <div class="row">
+    <%= yield %>
+
+  </div>
+</div>
+
+<!-- /.container -->
+<hr>
+<%= render 'layouts/footer' %>
+
+
+</body>
+
+<!-- jQuery -->
+<script src="/assets/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+
+<script>
+    function Divs() {
+        var divs= $('#parent div'),
+                now = divs.filter(':visible'),
+                next = now.next().length ? now.next() : divs.first(),
+                speed = 1000;
+
+        now.fadeOut(speed);
+        next.fadeIn(speed);
+    }
+
+    $(function () {
+        setInterval(Divs, 1400);
+    });
+
+</script>
+
+
+<script>
+    $(function(){
+        $('.fadein img:gt(0)').hide();
+        setInterval(function(){
+                    $('.fadein :first-child').fadeOut()
+                            .next('div').fadeIn()
+                            .end().appendTo('.fadein');},
+                3000);
+    });
+</script>
+
+</html>
