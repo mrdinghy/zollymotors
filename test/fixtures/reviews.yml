@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  manufacturer_id: 1
+  stars_ease: 1
+  stars_quality: 1
+  stars_price: 1
+  stars_ontime: 1
+  stars_attention: 1
+  service_date: 2015-05-26
+  review_note: MyText
+  recommended: false
+  car_model: MyString
+  car_year: 1
+
+two:
+  user_id: 1
+  manufacturer_id: 1
+  stars_ease: 1
+  stars_quality: 1
+  stars_price: 1
+  stars_ontime: 1
+  stars_attention: 1
+  service_date: 2015-05-26
+  review_note: MyText
+  recommended: false
+  car_model: MyString
+  car_year: 1
