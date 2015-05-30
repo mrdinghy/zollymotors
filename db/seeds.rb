@@ -30,11 +30,12 @@ manufacturers = Manufacturer.create([
 
 
 services = Service.create([
-                              { name: 'Scheduled Mileage Maintenance' },
-                              { name: 'Technology-based Diagnosis' },
-                              { name: 'Repairs' },
-                              { name: 'Pre-Purchase Inspection' },
-                              { name: 'Complete Body Repair' }
+                              { name: 'Scheduled Mileage Maintenance', image_file:  'new_dash.jpg'},
+                              { name: 'Technology-based Diagnosis',  image_file: 'ne_digital.jpg' },
+                              { name: 'Repairs',  image_file:  'new_repair.jpg' },
+                              { name: 'Pre-Purchase Inspection',  image_file: 'new_purchase.jpg' },
+                              { name: 'Certified Technicians',  image_file: 'new_team.jpg' },
+                              { name: 'Complete Body Repair', image_file: 'new_repair.jpg' }
 
 
                           ])
