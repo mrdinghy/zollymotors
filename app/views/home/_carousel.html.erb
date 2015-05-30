@@ -7,7 +7,9 @@
   <ol class="carousel-indicators">
     <% servicecount = 0 %>
     <% @services.each do |service| %>
-        <li data-target="#myCarousel" data-slide-to="<%= servicecount %>" <% if servicecount == 0 %>  class="active" <% end %>></li>
+        <li data-target="#myCarousel" data-slide-to="<%= servicecount %>"
+            <% if servicecount == 0 %>  class="active"
+            <% end %>></li>
         <% servicecount = servicecount + 1 %>
     <% end %>
   </ol>
@@ -23,14 +25,14 @@
             <% activeclass = 'item' %>
         <% end %>
         <div class="<%= activeclass %>">
-           <% if !service.image_file.blank? %>
-                <% service_img = 'assets/images/' + service.image_file %>
-           <% else %>
-                <% service_img = 'assets/images/eurautstretch.jpg' %>
+          <% if !service.image_file.blank? %>
+              <% service_img = 'assets/images/' + service.image_file %>
+          <% else %>
+              <% service_img = 'assets/images/eurautstretch.jpg' %>
 
-            <% end %>
-              <div class="fill" style="background-image:url(<%= service_img %>);">
-         </div>
+          <% end %>
+          <div class="fill" style="background-image:url(<%= service_img %>);">
+          </div>
 
           <div class="carousel-caption" style="text-align: right">
             <h1 class="shadow"><%= service.name %></h1>
@@ -41,7 +43,6 @@
         </div>
         <% servicecount = servicecount + 1 %>
     <% end %>
-
 
 
   </div>
