@@ -48,7 +48,8 @@
           top: 0;
           left: 0;
           font-family: 'Exo', sans-serif;
-          font-size: 28px;
+          font-size: 16px;
+          color: #999;
       }
       #parent div:first-child {
           display:block;
@@ -76,11 +77,11 @@
 <body class="ss">
 <%= render 'layouts/navbar' %>
 <% if params[:controller] == 'home' and params[:action] == 'index' %>
-
     <%= render 'home/carousel' %>
 <% end %>
 
-<nav class="navbar">
+
+
   <div class="container">
     <div class="row">
 
@@ -92,7 +93,7 @@
         <div id="box4" class="box">Acura Honda Lexus Mazda Nissan Saturn Toyota</div>
         <div id="box5" class="box" style="text-align:right">GM Ford Chrysler</div>
       </div>
-    </div></div></nav>
+    </div></div>
 <hr>
 <!-- Navigation -->
 <!--<p class="notice"><%#= notice %></p>
@@ -103,7 +104,6 @@
 <!-- Page Content -->
 <div class="container">
 
-  <br><br>
   <div class="row">
     <%= yield %>
 

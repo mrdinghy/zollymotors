@@ -1,14 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
+<% if !@service.image_file.blank? %>
+    <% service_img = '/assets/images/' + @service.image_file %>
+<% else %>
+    <% service_img = '/assets/images/eurautstretch.jpg' %>
+<% end %>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<div class="col-md-6">
+  <img class="img-responsive" src="<%= service_img %>" alt="">
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+
+
+  <div class="col-md-6">
+    <h2> <%= @service.name %></h2>
+
+    <p>Some text needs to go here on this specific service page. Details on why you want to have the potential
+      customer to know about this provision.
+      </p>
+    <p><%= @service.description %></p>
+    <%= link_to 'Edit', edit_service_path(@service) %> |
+    <%= link_to 'Back', services_path %>
+
+  </div>
+</div>
+    </div>
