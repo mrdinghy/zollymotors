@@ -4,10 +4,65 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <div class="col-md-6">
+
+
           <p>Copyright &copy; Specialty Services 2015</p>
           <p>Website developed by Artisan Solutions
-            <a href="mailto:smetzger@artisangroup-solutions.com">Contact</a><mailto: >
+            <a href="mailto:smetzger@artisangroup-solutions.com">Contact</a></mailto:>
           </p>
+          </div>
+
+          <div class="col-md-6">
+            <ul class="nav navbar-nav navbar-right ss14">
+            <%# if user_signed_in? %>
+
+
+                <li>
+                  <%= link_to reviews_path do %>
+                      Reviews
+                  <% end %>
+                </li>
+
+              <% if user_signed_in? %>
+                <li>
+                  <a class="accordion-toggle" href="#usermenu" data-toggle="collapse">
+              <span class="user-info">
+                <small>Welcome,</small>
+                <%= current_user.email %>
+            </span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                  </a>
+                  <ul id="usermenu" class="collapse">
+                    <li>
+                      <%= link_to user_path(current_user) do %>
+                          <i class="icon-user"></i>
+                          View Profile
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to edit_user_path(current_user) do %>
+                          <i class="icon-user"></i>
+                          Edit Profile
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to destroy_user_session_path, :id => current_user.id, :method => :delete do %>
+                          <i class="icon-off"></i>
+                          Logout
+                      <% end %>
+                    </li>
+
+                  </ul>
+                </li>
+            <% else %>
+
+                 <li><%= link_to 'Sign up', new_user_registration_path %></li>
+                <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>

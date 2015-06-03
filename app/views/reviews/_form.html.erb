@@ -7,107 +7,138 @@
       </div>-->
       <div class="panel-body">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-9">
+          <div class="form-horizontal">
           <%= simple_form_for(@review) do |f| %>
               <%#= hidden_field_tag(:user_id, current_user.id) %>
               <%= f.error_notification %>
-              <div class="form-group">
-                <%= f.input :service_date, :class => "form-control" %>
-              </div>
 
 
-              <div class="form-group">
-                <%= f.input :car_model, :class => "form-control" %>
-
-              </div>
-              <div class="form-group">
-                <%= f.input :car_year, :class => "form-control" %>
-              </div>
-
-              <div class="form-group">
-                <label>Car Manufacturer</label>
-                <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, include_blank: true, :class => "form-control") %>
-              </div>
-
-              <div class="form-group">
-                 <%= f.input :recommended %>
-                </label>
-
-              </div>
-
-              <div class="form-group">
-                <label>Comments</label>
-                <%= f.input :review_note, :class => "form-control", :label => false  %>
-              </div>
-
-                  <div class="form-group">
-                  <table>
-                   <tr>
-                     <th></th>
-                     <th>Very Poor</th>
-                     <th>Poor</th>
-                     <th>Average</th>
-                     <th>Good</th>
-                     <th>Excellent</th>
-                   </tr> 
-                   <tr>
-                     <td>Ease</td>
-                     <td><%= f.radio_button :stars_ease, 1 %></td>
-                     <td><%= f.radio_button :stars_ease, 2 %></td>
-                     <td><%= f.radio_button :stars_ease, 3 %></td>
-                     <td><%= f.radio_button :stars_ease, 4 %></td>
-                     <td><%= f.radio_button :stars_ease, 5 %></td>
-                  </tr>
-                    <tr>
-                      <td>Quality</td>
-                      <td><%= f.radio_button :stars_quality, 1 %></td>
-                      <td><%= f.radio_button :stars_quality, 2 %></td>
-                      <td><%= f.radio_button :stars_quality, 3 %></td>
-                      <td><%= f.radio_button :stars_quality, 4 %></td>
-                      <td><%= f.radio_button :stars_quality, 5 %></td>
-                    </tr>
-                    <tr>
-                      <td>Price</td>
-                      <td><%= f.radio_button :stars_price, 1 %></td>
-                      <td><%= f.radio_button :stars_price, 2 %></td>
-                      <td><%= f.radio_button :stars_price, 3 %></td>
-                      <td><%= f.radio_button :stars_price, 4 %></td>
-                      <td><%= f.radio_button :stars_price, 5 %></td>
-                    </tr>
-
-                    <tr>
-                      <td>Ontime</td>
-                      <td><%= f.radio_button :stars_ontime, 1 %></td>
-                      <td><%= f.radio_button :stars_ontime, 2 %></td>
-                      <td><%= f.radio_button :stars_ontime, 3 %></td>
-                      <td><%= f.radio_button :stars_ontime, 4 %></td>
-                      <td><%= f.radio_button :stars_ontime, 5 %></td>
-                    </tr>
-
-                    <tr>
-                      <td>Attention</td>
-                      <td><%= f.radio_button :stars_attention, 1 %></td>
-                      <td><%= f.radio_button :stars_attention, 2 %></td>
-                      <td><%= f.radio_button :stars_attention, 3 %></td>
-                      <td><%= f.radio_button :stars_attention, 4 %></td>
-                      <td><%= f.radio_button :stars_attention, 5 %></td>
-                    </tr>
-
-
-
-
-
-
-
-
-                  </table>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Service Date</label>
+                  <div class="col-sm-8">
+                    <%= f.input :service_date, :label => false, :class => "form-control" %>
                   </div>
+                </div>
 
-              <%= f.button :submit, :class => "btn btn-primary" %><br>
-              <%#= f.button :reset, :class => "btn btn-default" %><br>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Email (optional)</label>
+                  <div class="col-sm-8">
+                    <%= f.input :email, :label => false, :class => "form-control" %>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Car Model</label>
+                  <div class="col-sm-8">
+                    <%= f.input :car_model, :label => false, :class => "form-control"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Car Year</label>
+                  <div class="col-sm-8">
+                    <%= f.input :car_year, :label => false, :class => "form-control"%>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Car Make</label>
+                  <div class="col-sm-8">
+                    <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, include_blank: true, :class => "form-control") %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Will Recommend?</label>
+                  <div class="col-sm-8">
+                    <%= f.input :recommended, :label => false, :class => "form-control" %>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Additional Comments</label>
+                  <div class="col-sm-8">
+                    <%= f.input :review_note, :class => "form-control", :label => false  %>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Ratings</label>
+                  <div class="col-sm-8">
+
+
+                    <table>
+                      <tr>
+                        <th></th>
+                        <th width="50">Very Poor</th>
+                        <th width="50">Poor</th>
+                        <th width="50">Average</th>
+                        <th width="50">Good</th>
+                        <th width="50">Excellent</th>
+                      </tr>
+                      <tr>
+                        <td>Ease</td>
+                        <td><%= f.radio_button :stars_ease, 1 %></td>
+                        <td><%= f.radio_button :stars_ease, 2 %></td>
+                        <td><%= f.radio_button :stars_ease, 3 %></td>
+                        <td><%= f.radio_button :stars_ease, 4 %></td>
+                        <td><%= f.radio_button :stars_ease, 5 %></td>
+                      </tr>
+                      <tr>
+                        <td>Quality</td>
+                        <td><%= f.radio_button :stars_quality, 1 %></td>
+                        <td><%= f.radio_button :stars_quality, 2 %></td>
+                        <td><%= f.radio_button :stars_quality, 3 %></td>
+                        <td><%= f.radio_button :stars_quality, 4 %></td>
+                        <td><%= f.radio_button :stars_quality, 5 %></td>
+                      </tr>
+                      <tr>
+                        <td>Price</td>
+                        <td><%= f.radio_button :stars_price, 1 %></td>
+                        <td><%= f.radio_button :stars_price, 2 %></td>
+                        <td><%= f.radio_button :stars_price, 3 %></td>
+                        <td><%= f.radio_button :stars_price, 4 %></td>
+                        <td><%= f.radio_button :stars_price, 5 %></td>
+                      </tr>
+
+                      <tr>
+                        <td>Ontime</td>
+                        <td><%= f.radio_button :stars_ontime, 1 %></td>
+                        <td><%= f.radio_button :stars_ontime, 2 %></td>
+                        <td><%= f.radio_button :stars_ontime, 3 %></td>
+                        <td><%= f.radio_button :stars_ontime, 4 %></td>
+                        <td><%= f.radio_button :stars_ontime, 5 %></td>
+                      </tr>
+
+                      <tr>
+                        <td>Attention</td>
+                        <td><%= f.radio_button :stars_attention, 1 %></td>
+                        <td><%= f.radio_button :stars_attention, 2 %></td>
+                        <td><%= f.radio_button :stars_attention, 3 %></td>
+                        <td><%= f.radio_button :stars_attention, 4 %></td>
+                        <td><%= f.radio_button :stars_attention, 5 %></td>
+                      </tr>
+
+               </table>
+
+
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"></label>
+                  <div class="col-sm-8">
+                    <%= f.button :submit, :class => "btn btn-primary" %>
+                  </div>
+                </div>
 
 
             <% end %>
+            </div>
           </div>
           <!-- /.col-lg-6 (nested) -->
 
