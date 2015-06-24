@@ -21,20 +21,68 @@
   <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   <style>
-      .ss  {
+      .ss {
           font-family: 'Exo', sans-serif;
       }
-      .ss12 {font-family: 'Exo', sans-serif; font-size: 12px;}
-      .ss14 {font-family: 'Exo', sans-serif; font-size: 14px;}
-      .ss16 {font-family: 'Exo', sans-serif; font-size: 16px;}
-      .ss18 {font-family: 'Exo', sans-serif; font-size: 18px;}
-      .ss24 {font-family: 'Exo', sans-serif; font-size: 24px;}
-      .ss36 {font-family: 'Exo', sans-serif; font-size: 36px;}
-      .ss44 {font-family: 'Exo', sans-serif; font-size: 44px;}
 
-      .fadein { position:relative; width:500px; height:150px; }
-      .fadein img { position:absolute; left:0; top:0; }
+      .ss12 {
+          font-family: 'Exo', sans-serif;
+          font-size: 12px;
+      }
+
+      .ss14 {
+          font-family: 'Exo', sans-serif;
+          font-size: 14px;
+      }
+
+      .ss16 {
+          font-family: 'Exo', sans-serif;
+          font-size: 16px;
+      }
+
+      .ss18 {
+          font-family: 'Exo', sans-serif;
+          font-size: 18px;
+      }
+
+      .ss20 {
+          font-family: 'Exo', sans-serif;
+          font-size: 20 x;
+      }
+
+      .ss24 {
+          font-family: 'Exo', sans-serif;
+          font-size: 24px;
+      }
+
+      .ss36 {
+          font-family: 'Exo', sans-serif;
+          font-size: 36px;
+      }
+
+      .ss44 {
+          font-family: 'Exo', sans-serif;
+          font-size: 44px;
+      }
+
+      .ss-phones {
+          font-family: 'Droid Sans Mono';
+          font-size: 36px;
+      }
+
+      .fadein {
+          position: relative;
+          width: 500px;
+          height: 150px;
+      }
+
+      .fadein img {
+          position: absolute;
+          left: 0;
+          top: 0;
+      }
 
       div.carlist {
           background-color: #67b168;
@@ -43,7 +91,7 @@
       }
 
       #parent div {
-          display:none;
+          display: none;
           position: relative;
           top: 0;
           left: 0;
@@ -51,20 +99,36 @@
           font-size: 16px;
           color: #999;
       }
-      #parent div:first-child {
-          display:block;
-      }
-      div.parent {background:red}
 
-      #parent > div{
-          width:1200px;
-          height:0px;
+      #parent div:first-child {
+          display: block;
       }
-      .shadow
-      {
+
+      div.parent {
+          background: red
+      }
+
+      #parent > div {
+          width: 1200px;
+          height: 0px;
+      }
+
+      .shadow {
           text-shadow: 2px 2px #ff0000;
           font-size: 48px;
       }
+
+      div.cars-static {
+          position: relative;
+          text-align: center;
+          top: 0;
+          left: 0;
+          font-family: 'Exo', sans-serif;
+          font-size: 16px;
+          color: #999;
+      }
+
+
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,24 +140,12 @@
 </head>
 <body class="ss">
 <%= render 'layouts/navbar' %>
+
 <% if params[:controller] == 'home' and params[:action] == 'index' %>
     <%= render 'home/carousel' %>
 <% end %>
 
 
-
-  <div class="container">
-    <div class="row">
-
-      <div id="parent">
-
-        <div id="box1" class="box">Audi BMW Mercedes Porsche Volkswagen</div>
-        <div id="box2" class="box" style="text-align:right">Jaguar Landrover Mini</div>
-        <div id="box3" class="box">Saab Volvo</div>
-        <div id="box4" class="box">Acura Honda Lexus Mazda Nissan Saturn Toyota</div>
-        <div id="box5" class="box" style="text-align:right">GM Ford Chrysler</div>
-      </div>
-    </div></div>
 <hr>
 <!-- Navigation -->
 <!--<p class="notice"><%#= notice %></p>
@@ -132,7 +184,7 @@
 
 <script>
     function Divs() {
-        var divs= $('#parent div'),
+        var divs = $('#parent div'),
                 now = divs.filter(':visible'),
                 next = now.next().length ? now.next() : divs.first(),
                 speed = 1000;
@@ -149,12 +201,13 @@
 
 
 <script>
-    $(function(){
+    $(function () {
         $('.fadein img:gt(0)').hide();
-        setInterval(function(){
+        setInterval(function () {
                     $('.fadein :first-child').fadeOut()
                             .next('div').fadeIn()
-                            .end().appendTo('.fadein');},
+                            .end().appendTo('.fadein');
+                },
                 3000);
     });
 </script>
