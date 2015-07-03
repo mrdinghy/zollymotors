@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :searches
+
   resources :siteblurbs
 
   resources :reviews
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   get 'about' => 'home#about'
   get 'advise' => 'home#advise'
   get 'contact' => 'home#contact'
+  get 'displayreviews' => 'reviews#display'
 
 
   # Example of regular route:

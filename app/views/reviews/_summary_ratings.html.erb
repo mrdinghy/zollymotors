@@ -1,0 +1,69 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Summary Customer Reviews (Since 1970)
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+
+
+    <table>
+      <tr>
+        <td>Overall Rating</td>
+        <td>
+          <ul class="list-inline">
+            <%= @stars_summary_tag.html_safe %>   (<%= sprintf("%5.2f", @avgrate) %>)
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Ease</td>
+        <td>
+          <ul class="list-inline">
+
+            <%= @stars_ease_tag.html_safe %> (<%= sprintf("%5.2f", @avg_ease) %>)
+
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Quality</td>
+        <td>
+          <ul class="list-inline">
+            <%= @stars_quality_tag.html_safe %>  (<%= sprintf("%5.2f", @avg_quality) %>)
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>
+          <ul class="list-inline">
+            <%= @stars_price_tag.html_safe %> (<%= sprintf("%5.2f", @avg_price) %>)
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Attention</td>
+        <td>
+          <ul class="list-inline">
+            <%= @stars_attention_tag.html_safe %> (<%= sprintf("%5.2f", @avg_attention) %>)
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>On Time</td>
+        <td>
+          <ul class="list-inline">
+            <%= @stars_ontime_tag.html_safe %>  (<%= sprintf("%5.2f", @avg_ontime) %>)
+          </ul>
+        </td>
+      </tr>
+      -->
+    </table>
+
+
+  </div>
+
+</div>
+<!-- /.panel-body -->

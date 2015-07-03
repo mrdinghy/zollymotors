@@ -28,49 +28,62 @@
   <%= @review.car_year %>
 </p>
 
+<p>
+  <strong>Overall Rating</strong>
+  <strong><%= @avgrate %></strong>
+</p>
+
 <table>
-  <tr><td>Ease</td><td>
-    <ul class="list-inline">
-  <%= @review.star1(@review.stars_ease).html_safe %>
-  <%= @review.star2(@review.stars_ease).html_safe %>
-  <%= @review.star3(@review.stars_ease).html_safe %>
-  <%= @review.star4(@review.stars_ease).html_safe %>
-  <%= @review.star5(@review.stars_ease).html_safe %>     </ul>
-  </td></tr>
-  <tr><td>Quality</td><td>
-    <ul class="list-inline">
-  <%= @review.star1(@review.stars_quality).html_safe %>
-  <%= @review.star2(@review.stars_quality).html_safe %>
-  <%= @review.star3(@review.stars_quality).html_safe %>
-  <%= @review.star4(@review.stars_quality).html_safe %>
-  <%= @review.star5(@review.stars_quality).html_safe %>  </ul>
-  </td></tr>
-  <tr><td>Price</td><td>
-    <ul class="list-inline">
-  <%= @review.star1(@review.stars_price).html_safe %>
-  <%= @review.star2(@review.stars_price).html_safe %>
-  <%= @review.star3(@review.stars_price).html_safe %>
-  <%= @review.star4(@review.stars_price).html_safe %>
-  <%= @review.star5(@review.stars_price).html_safe %>    </ul>
-  </td></tr>
-  <tr><td>On Time</td><td>
-    <ul class="list-inline">
-  <%= @review.star1(@review.stars_ontime).html_safe %>
-  <%= @review.star2(@review.stars_ontime).html_safe %>
-  <%= @review.star3(@review.stars_ontime).html_safe %>
-  <%= @review.star4(@review.stars_ontime).html_safe %>
-  <%= @review.star5(@review.stars_ontime).html_safe %> </ul>
-  </td></tr>
-  <tr><td>Attention</td><td>
-    <ul class="list-inline">
-  <%= @review.star1(@review.stars_attention).html_safe %>
-  <%= @review.star2(@review.stars_attention).html_safe %>
-  <%= @review.star3(@review.stars_attention).html_safe %>
-  <%= @review.star4(@review.stars_attention).html_safe %>
-  <%= @review.star5(@review.stars_attention).html_safe %>
-        </ul>
-  </td></tr>
-  </table>
+  <tr>
+    <td>Overall Rating</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_summary_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Ease</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_ease_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Quality</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_quality_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Price</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_price_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>On Time</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_attention_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Attention</td>
+    <td>
+      <ul class="list-inline">
+        <%= @stars_ontime_tag.html_safe %>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 <p>
   <strong>Recommended:</strong>

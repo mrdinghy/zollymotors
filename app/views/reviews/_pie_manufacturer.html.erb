@@ -1,0 +1,49 @@
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+
+
+<script>
+
+
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Make', 'Reviews'],
+            <% @makes_count.each do |make| %>
+            ['<%= make.manufacturer.name %>', <%= make.vcount %>]
+            <% if make == @makes_count.last %>
+            <% else %>
+            ,
+            <% end %>
+            <% end %>
+        ]);
+
+        var options = {
+            title: 'Reviews by Make'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+    }
+
+
+</script>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Latest Customer Reviews
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div id="piechart" style="width: 800px; height: 600px;"></div>
+  </div>
+  <!-- end panel body -->
+</div>  <!-- end panel -->
+
+
+
+
+

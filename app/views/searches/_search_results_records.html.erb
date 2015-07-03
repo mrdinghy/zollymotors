@@ -1,0 +1,46 @@
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+  <tr>
+    <th>Reviewer</th>
+    <th>Service date</th>
+    <th>Manufacturer</th>
+    <th>Car model</th>
+    <th>Car year</th>
+    <th>Ease</th>
+    <th>Quality</th>
+    <th>Price</th>
+    <th>On Time</th>
+    <th>Attention</th>
+    <th>Review note</th>
+    <th>Recommended</th>
+    <th colspan="3"></th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @searchset.each do |review| %>
+      <tr class="odd gradeX">
+        <td><%= review.email %></td>
+        <td><%= review.service_date %></td>
+        <td><%= review.manufacturer.name %></td>
+        <td><%= review.car_model %></td>
+        <td><%= review.car_year %></td>
+        <td><%= review.stars_ease %></td>
+        <td><%= review.stars_quality %></td>
+        <td><%= review.stars_price %></td>
+        <td><%= review.stars_ontime %></td>
+        <td><%= review.stars_attention %></td>
+
+        <td><%= review.review_note %></td>
+        <td><%= review.recommended %></td>
+
+        <td><%= link_to 'Show', review %></td>
+        <td><%= link_to 'Edit', edit_review_path(review) %></td>
+        <td><%= link_to 'Destroy', review, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>

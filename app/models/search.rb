@@ -1,26 +1,27 @@
-class Review < ActiveRecord::Base
-  extend EnumerateIt
-  #has_enumeration_for :rating
-  belongs_to :user
-  belongs_to :manufacturer
+class Search < ActiveRecord::Base
 
 
-  def get_all_ratings
-    #total = Rating.where('provider_id = ?', self.id)
-    #return total
+  def reviews
+    reviewsearchset ||= find_reviews
+
   end
 
-  def get_average_rating
-    #total = Rating.select('avg(stars) as avgstar').where('provider_id = ?', self.id).first
-    #return total
+
+  def find_reviews
+    reviews = Review.all
+    reviews = reviews.where(manufacturer_id: manufacturer_id) if manufacturer_id.present?
+    reviews = reviews.where(car_year: car_year) if car_year.present?
+    reviews = reviews.where("review_note ILIKE ?", "%#{search_text}%") if search_text.present?
+    reviews = reviews.where("car_model ILIKE ?", "%#{car_model}%") if car_model.present?
+    reviews = reviews.where("service_date <= ?", search_end) if search_end.present?
+    reviews = reviews.where("service_date >= ?", search_start) if search_start.present?
+
+
+    reviews
   end
 
-  def get_count_rating
-    #total = Rating.select('count(stars) as countstar').where('provider_id = ?', self.id).first
-    #return total
-  end
 
-  def showstars(rating)
+  def star1(rating)
     tag = ''
 
     if rating < 0.25
@@ -69,6 +70,9 @@ class Review < ActiveRecord::Base
     tag= tag + tag5
     return tag
   end
+
+
+  private
 
 
 end
