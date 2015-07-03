@@ -1,0 +1,107 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".search-select").chosen();
+    });
+</script>
+
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Search Reviews
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+
+
+    <div class="form-horizontal">
+      <%= simple_form_for(@search) do |f| %>
+          <%#= hidden_field_tag(:user_id, current_user.id) %>
+          <%= f.error_notification %>
+
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Search Start</label>
+
+            <div class="col-sm-8">
+              <%= f.input :search_start, :label => false, include_blank: true, :discard_day => true, :class => "form-control" %>
+              (enter month and year)
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Search End</label>
+
+            <div class="col-sm-8">
+              <%= f.input :search_end, :label => false, include_blank: true, :discard_day => true, :class => "form-control" %>
+              (enter month and year)
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Car Model</label>
+
+            <div class="col-sm-8">
+              <%= f.input :car_model, :label => false, :class => "form-control" %>
+            </div>
+            (enter string or substring of model name)
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Car Year</label>
+
+            <div class="col-sm-8">
+              <%= f.select :car_year, (1960)...(2017), prompt: 'Choose Model Year' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Car Make</label>
+
+            <div class="col-sm-8">
+              <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, prompt: 'Choose Make', :class => "form-control") %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Will Recommend?</label>
+
+            <div class="col-sm-8">
+              <%= f.input :recommended, :label => false, :class => "form-control" %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Search Comments</label>
+
+            <div class="col-sm-8">
+              <%= f.input :search_text, :class => "form-control", :label => false %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label"></label>
+
+            <div class="col-sm-8">
+              <%= f.button :submit, :class => "btn btn-primary" %>
+            </div>
+          </div>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

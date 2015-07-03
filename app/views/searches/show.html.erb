@@ -1,0 +1,194 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%= link_to 'New Search', new_search_path %>
+
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+
+    <div class="col-md-8">
+
+
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Search Summary</a></li>
+          <li role="presentation">
+            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Search Results</a></li>
+          <li role="presentation">
+            <a href="#params" aria-controls="profile" role="tab" data-toggle="tab">Search Criteria</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div role="tabpanel" class="tab-pane active" id="home">
+
+
+            Number of Reivews Returned : <strong><%= @searchset.count %></strong> <br> <br>
+            <table>
+              <tr>
+                <td>Overall Rating</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_summary_tag.html_safe %>     (<%= sprintf("%5.2f", @avgrate) %>)
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Ease</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_ease_tag.html_safe %>    (<%= sprintf("%5.2f", @avg_ease) %>)
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Quality</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_quality_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_quality) %>)
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_price_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_price) %>)
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Attention</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_attention_tag.html_safe %>     (<%= sprintf("%5.2f", @avg_attention) %>)
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>On Time</td>
+                <td>
+                  <ul class="list-inline">
+                    <%= @stars_ontime_tag.html_safe %>        (<%= sprintf("%5.2f", @avg_ontime) %>)
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="profile">
+
+            <%= render partial: 'searches/search_results_records' %>
+
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="params">
+            <%= debug params %>
+            <p>
+              <strong>Search start:</strong>
+              <%= @search.search_start %>
+            </p>
+
+            <p>
+              <strong>Search end:</strong>
+              <%= @search.search_end %>
+            </p>
+            <% if !@search.manufacturer_id.blank? %>
+
+                <p>
+                  <strong>Manufacturer:</strong>
+                  <%= @carmake.name %>
+                </p>
+            <% end %>
+
+            <p>
+              <strong>Car model:</strong>
+              <%= @search.car_model %>
+            </p>
+
+            <p>
+              <strong>Car year:</strong>
+              <%= @search.car_year %>
+            </p>
+
+            <p>
+              <strong>Recommended:</strong>
+              <%= @search.recommended %>
+            </p>
+
+            <p>
+              <strong>Search text:</strong>
+              <%= @search.search_text %>
+            </p>
+
+            <%= link_to 'Edit', edit_search_path(@search) %> |
+            <%= link_to 'Back', searches_path %>
+
+
+            .
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="settings">...</div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-md-4">
+
+
+      <%= render partial: 'reviews/search_reviews' %>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
