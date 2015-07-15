@@ -16,21 +16,22 @@ class SearchesController < ApplicationController
       @carmake= Manufacturer.find(@search.manufacturer_id)
 
     end
+    if @searchset.count > 0
+      @avg_ease = @searchset.average(:stars_ease)
+      @avg_quality = @searchset.average(:stars_quality)
+      @avg_price = @searchset.average(:stars_price)
+      @avg_attention = @searchset.average(:stars_attention)
+      @avg_ontime = @searchset.average(:stars_ontime)
+      sumrate= (@avg_ease + @avg_quality + @avg_price + @avg_ontime + @avg_attention)
+      @avgrate= sumrate / 5.0
 
-    @avg_ease = @searchset.average(:stars_ease)
-    @avg_quality = @searchset.average(:stars_quality)
-    @avg_price = @searchset.average(:stars_price)
-    @avg_attention = @searchset.average(:stars_attention)
-    @avg_ontime = @searchset.average(:stars_ontime)
-    sumrate= (@avg_ease + @avg_quality + @avg_price + @avg_ontime + @avg_attention)
-    @avgrate= sumrate / 5.0
-
-    @stars_ease_tag = @search.star1(@avg_ease)
-    @stars_quality_tag = @search.star1(@avg_quality)
-    @stars_price_tag = @search.star1(@avg_price)
-    @stars_attention_tag = @search.star1(@avg_attention)
-    @stars_ontime_tag = @search.star1(@avg_ontime)
-    @stars_summary_tag = @search.star1(@avgrate)
+      @stars_ease_tag = @search.star1(@avg_ease)
+      @stars_quality_tag = @search.star1(@avg_quality)
+      @stars_price_tag = @search.star1(@avg_price)
+      @stars_attention_tag = @search.star1(@avg_attention)
+      @stars_ontime_tag = @search.star1(@avg_ontime)
+      @stars_summary_tag = @search.star1(@avgrate)
+    end
 
 
     respond_with(@search)

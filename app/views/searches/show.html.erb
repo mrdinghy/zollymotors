@@ -2,7 +2,7 @@
 
 
 
-<%= link_to 'New Search', new_search_path %>
+<%= link_to 'New Search', displayreviews_path %>
 
 
 
@@ -29,62 +29,65 @@
         <div class="tab-content">
 
           <div role="tabpanel" class="tab-pane active" id="home">
+            <% if @searchset.count == 0 %>
 
+                No Review Records Found
+            <% else %>
 
-            Number of Reivews Returned : <strong><%= @searchset.count %></strong> <br> <br>
-            <table>
-              <tr>
-                <td>Overall Rating</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_summary_tag.html_safe %>     (<%= sprintf("%5.2f", @avgrate) %>)
-                  </ul>
-                </td>
-              </tr>
+                Number of Reviews Returned : <strong><%= @searchset.count %></strong> <br> <br>
+                <table>
+                  <tr>
+                    <td>Overall Rating</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_summary_tag.html_safe %>     (<%= sprintf("%5.2f", @avgrate) %>)
+                      </ul>
+                    </td>
+                  </tr>
 
-              <tr>
-                <td>Ease</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_ease_tag.html_safe %>    (<%= sprintf("%5.2f", @avg_ease) %>)
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>Quality</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_quality_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_quality) %>)
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>Price</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_price_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_price) %>)
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>Attention</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_attention_tag.html_safe %>     (<%= sprintf("%5.2f", @avg_attention) %>)
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>On Time</td>
-                <td>
-                  <ul class="list-inline">
-                    <%= @stars_ontime_tag.html_safe %>        (<%= sprintf("%5.2f", @avg_ontime) %>)
-                  </ul>
-                </td>
-              </tr>
-            </table>
+                  <tr>
+                    <td>Ease</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_ease_tag.html_safe %>    (<%= sprintf("%5.2f", @avg_ease) %>)
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Quality</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_quality_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_quality) %>)
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_price_tag.html_safe %>      (<%= sprintf("%5.2f", @avg_price) %>)
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Attention</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_attention_tag.html_safe %>     (<%= sprintf("%5.2f", @avg_attention) %>)
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>On Time</td>
+                    <td>
+                      <ul class="list-inline">
+                        <%= @stars_ontime_tag.html_safe %>        (<%= sprintf("%5.2f", @avg_ontime) %>)
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
 
-
+            <% end %>
           </div>
 
           <div role="tabpanel" class="tab-pane" id="profile">
@@ -94,7 +97,7 @@
           </div>
 
           <div role="tabpanel" class="tab-pane" id="params">
-            <%= debug params %>
+            <%#= debug params %>
             <p>
               <strong>Search start:</strong>
               <%= @search.search_start %>
