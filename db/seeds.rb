@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(email: 'stvmetzger@aol.com', password: 'cantina23')
+User.create(email: 'ntimb@verizon.net', password: 'ntimb123')
+
+
 manufacturers = Manufacturer.create([
                                         { name: 'Audi' },
                                         { name: 'BMW' },
@@ -30,12 +34,29 @@ manufacturers = Manufacturer.create([
 
 
 services = Service.create([
-                              { name: 'Scheduled Mileage Maintenance', image_file:  'new_dash.jpg'},
-                              { name: 'Technology-based Diagnosis',  image_file: 'new_digital.jpg' },
-                              { name: 'Repairs',  image_file:  'new_repair.jpg' },
-                              { name: 'Pre-Purchase Inspection',  image_file: 'new_purchase.jpg' },
-                              { name: 'Certified Technicians',  image_file: 'new_team.jpg' },
-                              { name: 'Complete Body Repair', image_file: 'new_repair.jpg' }
+                              { name: 'Scheduled Mileage Maintenance',
+                                    description: 'Networks. Appropriately impact world-class core competencies before bricks-and-clicks sources.',
+                                    image_file:  'set_dash.jpg'},
+                              { name: 'Technology-based Diagnosis',
+                                description: 'Collaboratively empower high-quality strategic theme areas through fully tested metrics. ',
+                                image_file: 'set_digital.jpg' },
+
+                              { name: 'Repairs',
+                                description: 'Professionally synthesize clicks-and-mortar total linkage for orthogonal manufactured products. ',
+                                image_file:  'set_repair.jpg' },
+
+                              { name: 'Pre-Purchase Inspection',
+                                description: 'Dramatically synthesize client-centered methodologies and resource-leveling e-tailers. Energistically simplify collaborative relationships for leveraged testing procedures. Assertively.',
+                                image_file: 'set_sale.jpg' },
+
+                              { name: 'Certified Technicians',
+                                description: 'Appropriately impact stand-alone infomediaries for client-based scenarios. Credibly engage multidisciplinary "outside the box" thinking for go.',
+                                image_file: 'set_certify.jpg'
+                              },
+
+                              { name: 'Complete Body Repair',
+                                description: 'Competently exploit error-free alignments through backward-compatible growth strategies. Synergistically pontificate resource sucking e-services via client-based platforms. Globally fashion.',
+                                image_file: 'set_body.jpg' }
 
 
                           ])

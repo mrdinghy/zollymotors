@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  search_start: 2015-06-27
+  search_end: 2015-06-27
+  manufacturer_id: 1
+  car_model: MyString
+  car_year: 1
+  recommended: false
+  search_text: MyString
+
+two:
+  search_start: 2015-06-27
+  search_end: 2015-06-27
+  manufacturer_id: 1
+  car_model: MyString
+  car_year: 1
+  recommended: false
+  search_text: MyString

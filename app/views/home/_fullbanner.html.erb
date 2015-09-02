@@ -1,0 +1,188 @@
+<style>
+    .carousel-fade .carousel-inner .item {
+        opacity: 0;
+        -webkit-transition-property: opacity;
+        -moz-transition-property: opacity;
+        -o-transition-property: opacity;
+        transition-property: opacity;
+    }
+
+    .carousel-fade .carousel-inner .active {
+        opacity: 1;
+    }
+
+    .carousel-fade .carousel-inner .active.left,
+    .carousel-fade .carousel-inner .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .carousel-fade .carousel-inner .next.left,
+    .carousel-fade .carousel-inner .prev.right {
+        opacity: 1;
+    }
+
+    .carousel-fade .carousel-control {
+        z-index: 2;
+    }
+
+    html,
+    body,
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 400px;
+    }
+
+    /*
+    .item:nth-child(1) {
+    background: silver;
+    }
+    .item:nth-child(2) {
+    background: #red;
+    }
+    .item:nth-child(3) {
+    background: #666;
+    }        */
+</style>
+<section id="slider">
+  <div class="container">
+    <div class="row"
+    ">
+    <div class="col-md-2">
+      <div style="text-align: center; vertical-align: top">
+        <img src="/assets/images/ase_cert2.gif">
+      </div>
+      <br><br>
+
+      <div class="row">
+        <div class="col-md-6">
+          Audi BMW Jaguar Landrover<br>
+
+          Mercedes Saab<br>
+
+          Mini Porsche<br>
+
+          Volkswagen Volvo<br>
+        </div>
+        <div class="col-md-6" style="text-align: right">
+          Acura Honda<br>
+
+          Lexus Mazda<br>
+
+          Nissan Saturn Toyota<br>
+
+          GM Ford Chrysler<br>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div id="myCarousel" class="carousel slide carousel-fade" data-interval="3000" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="/assets/images/slide1_bw.jpg">
+
+            <div class="carousel-caption">
+
+            </div>
+          </div>
+
+          <% servicecount = 0 %>
+          <% @services.each do |service| %>
+              <div class="item">
+                <% if !service.image_file.blank? %>
+                    <% service_img = 'assets/images/' + service.image_file %>
+                <% else %>
+                    <% service_img = 'assets/images/eurautstretch.jpg' %>
+                <% end %>
+                <!--<div class="fill" style="background-image:url(<%#= service_img %>);"></div>-->
+
+                <img src="<%= service_img %>" width="800">
+
+                <div class="carousel-caption">
+                  <h3><%= service.name %><br>
+                    <small><a href="#philosophy">...read more</a></small>
+                  </h3>
+
+                  <!-- <%# if service.id == 9 %>
+                                    <p><span style="color: #fff; font-size: 12px"><%#= service.description %><</span></p>
+                                <%# else %>
+                                    <p><span style="color: #fff"><%#= service.description %></span></p>
+                                <%# end %>-->
+
+
+                </div>
+              </div>
+              <% servicecount = servicecount + 1 %>
+          <% end %>
+        </div>
+
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+          <span class="fa fa-chevron-left"><</span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+          <span class="fa fa-chevron-right">></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h3><span class="ss">Let our 45 Years of Experience Work for You</a></span></h3>
+
+
+      <div class="z_justify">
+
+        <p style="color: #fff;">As an alternative to dealer servicing and maintenance, our goal is to provide
+          professional and
+          personalized service and maintenance for your vehicle. We provide complete and accurate estimates for repairs
+          and maintenance performed only with
+
+          your approval. We do not believe in re-building your vehicle to new condition at every visit, nor to
+          performing routine
+          maintenance prematurely as either can add considerably to your maintenance and repair costs over the life of
+          your vehicle ownership.</p>
+
+
+        <p style="color: #fff;">We are a family-owned business specializing in the repair of both foreign and domestic
+          automobiles. Our ASE nationally-certified
+
+          technicians provide expert servicing on your vehicle utilizing the latest diagnostics, equipment and
+          training.</p>
+
+
+      </div>
+
+
+      <!--<a href="#philosophy">...read more</a>
+      <ul type="square">
+        <li>40 years family-owned business</li>
+        <li>Your alternative to dealer servicing and maintenance</li>
+        <li>Most Foreign and Domestic Care Serviced</li>
+        <li>Professional, personalized service</li>
+        <li>Accurate, fixed price,  estimates -- no hourly charges</li>
+        <li>ASE nationally certified mechanics</li>
+      </ul>-->
+
+
+    </div>
+
+
+  </div>
+  </div>
+</section>
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $("#myCarousel").carousel({
+            interval: 8000,
+            pause: false
+        });
+
+
+    });
+
+</script>

@@ -1,0 +1,71 @@
+<style>
+
+    h3.bounceInLeft {
+        font-size: 36;
+    }
+
+
+</style>
+
+
+<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators wow fadeInUp">
+    <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
+    <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
+    <li data-target="#carousel-example-captions" data-slide-to="2" class="active"></li>
+  </ol>
+  <div class="carousel-inner" style="background-color: #ccc">
+    <% servicecount = 0 %>
+    <% @services.each do |service| %>
+        <% if !service.image_file.blank? %>
+            <% service_img = 'assets/images/' + service.image_file %>
+        <% else %>
+            <% service_img = 'assets/images/eurautstretch.jpg' %>
+        <% end %>
+        <% if servicecount == 0 %>
+            <% activeclass = "item active" %>
+        <% else %>
+            <% activeclass = 'item' %>
+        <% end %>
+
+        <div class="<%= activeclass %>">
+          <div class="row">
+            <div class="col-md-4">
+              <img class="wow pulse" data-wow-duration="1s" alt="1" src="<%= service_img %>" alt="bg-1" height="370">
+            </div>
+            <div class="col-md-4">
+              <!--<div class="carousel-caption">-->
+              <h3 class="wow bounceInLeft ss36" data-wow-duration="2s"><%= service.name %></h3>
+
+              <% if service.id == 9 %>
+                  <span class="wow bounceInRight ss24" data-wow-duration="2s"><%= service.description %></span>
+              <% else %>
+                  <span class="wow bounceInRight ss24" data-wow-duration="2s">Aliquam sit amet gravida nibh, facilisis...</span>
+              <% end %>
+
+
+              <span class="wow bounceInRight" data-wow-duration="2s">Nulla vitae elit libero, a pharetra augue mollis interdum.</span>
+            </div>
+
+            <div class="col-md-4">
+              <img src="/assets/images/slide1_bw.jpg" height="370">
+            </div>
+
+
+          </div>
+
+
+          <!--</div>-->
+        </div>
+        <% servicecount = servicecount + 1 %>
+    <% end %>
+
+
+  </div>
+  <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+    <span class="fa fa-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+    <span class="fa fa-chevron-right"></span>
+  </a>
+</div>

@@ -31,7 +31,10 @@
     font-family: 'Exo', sans-serif;
     font-size: 24px;
 }
-
+.ss32 {
+    font-family: 'Exo', sans-serif;
+    font-size: 32px;
+}
 .ss36 {
     font-family: 'Exo', sans-serif;
     font-size: 36px;
@@ -49,7 +52,7 @@
 
 .ss-phones {
     font-family: 'Droid Sans Mono';
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .fadein {

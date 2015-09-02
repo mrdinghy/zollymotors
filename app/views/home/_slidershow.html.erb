@@ -1,0 +1,149 @@
+<style>
+    .carousel-fade .carousel-inner .item {
+        opacity: 0;
+        -webkit-transition-property: opacity;
+        -moz-transition-property: opacity;
+        -o-transition-property: opacity;
+        transition-property: opacity;
+    }
+
+    .carousel-fade .carousel-inner .active {
+        opacity: 1;
+    }
+
+    .carousel-fade .carousel-inner .active.left,
+    .carousel-fade .carousel-inner .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .carousel-fade .carousel-inner .next.left,
+    .carousel-fade .carousel-inner .prev.right {
+        opacity: 1;
+    }
+
+    .carousel-fade .carousel-control {
+        z-index: 2;
+    }
+
+    html,
+    body,
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 100% px;
+    }
+
+    .item:nth-child(1) {
+        background: silver;
+    }
+
+    .item:nth-child(2) {
+        background: red;
+    }
+
+    .item:nth-child(3) {
+        background: orange;
+    }
+</style>
+<section id="slider">
+  <div class="container">
+    <div class="row" style="background-color: #666;">
+
+      <div class="col-md-4 ss18" style="color: #fff;">
+        <h2 class="ss24">Let our 45 Years 45 Year of Experience Work for You</h2>
+        <ul type="square">
+          <li>40 years family-owned business</li>
+          <li>Your alternative to dealer servicing and maintenance</li>
+          <li>Most Foreign and Domestic Care Serviced</li>
+          <li>Professional, personalized service</li>
+          <li>Accurate, fixed price, estimates -- no hourly charges</li>
+          <li>ASE nationally certified mechanics</li>
+        </ul>
+        <div class="imgport" data-toggle="modal" data-target="#modal-philosophy">
+          <h4>read more....</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="padding: 0px;">
+
+        <div id="myCarousel" class="carousel slide carousel-fade" data-interval="3000" data-ride="carousel">
+          <!-- Carousel indicators -->
+          <!-- <ol class="carousel-indicators">
+             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+             <li data-target="#myCarousel" data-slide-to="1"></li>
+             <li data-target="#myCarousel" data-slide-to="2"></li>
+           </ol>          -->
+          <!-- Carousel items -->
+
+
+          <div class="carousel-inner">
+            <% servicecount = 0 %>
+            <% @services.each do |service| %>
+                <% if servicecount == 0 %>
+                    <% activeclass = "item active" %>
+                <% else %>
+                    <% activeclass = 'item' %>
+                <% end %>
+                <div class="<%= activeclass %>">
+                  <% if !service.image_file.blank? %>
+                      <% service_img = 'assets/images/' + service.image_file %>
+                  <% else %>
+                      <% service_img = 'assets/images/eurautstretch.jpg' %>
+                  <% end %>
+                  <!--<div class="fill" style="background-image:url(<%= service_img %>);">
+                    </div>-->
+
+                  <img src="<%= service_img %>">
+
+
+                  <div class="carousel-caption" style="text-align: right">
+                    <p><span style="color: #fff"><%= service.name %></span></p>
+                    <% if service.id == 9 %>
+                        <p><span style="color: #fff; font-size: 12px"><%= service.description %><</span></p>
+                    <% else %>
+                        <p><span style="color: #fff">Aliquam sit amet gravida nibh, facilisis...</span></p>
+                    <% end %>
+
+                    <a href="#philosophy">...read more</a>
+                  </div>
+                </div>
+                <% servicecount = servicecount + 1 %>
+            <% end %>
+
+          </div>
+
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"><</span>
+          </a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right">></span>
+          </a>
+        </div>
+      </div>
+      <!-- JavaScript jQuery code from Bootply.com editor  -->
+
+
+      <div class="col-md-4">
+        <img src="/assets/images/slide1_bw.jpg" height="370">
+
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $("#myCarousel").carousel({
+            interval: 8000,
+            pause: false
+        });
+
+
+    });
+
+</script>

@@ -1,0 +1,132 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Specialty Services @ Zolly Motors</title>
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%#= csrf_meta_tags %>
+  <!-- Bootstrap Core CSS -->
+
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Custom CSS -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css"/>
+  // Add the new slick-theme.css if you want the default styling
+  <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css"/>
+
+
+  <link href='/assets/css/zolly.css' rel='stylesheet' type='text/css'>
+  <link href='/assets/css/styles.css' rel='stylesheet' type='text/css'>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <style>
+      .fadein {
+          position: relative;
+          height: 332px;
+          width: 300px;
+      }
+
+      .fadein img {
+          position: absolute;
+          left: 100px;
+          top: 100px;
+      }
+  </style>
+
+
+</head>
+<body class="ss">
+
+<div id="page">
+
+
+  <%= render 'layouts/navbar' %>
+
+
+  <!-- Navigation -->
+  <!--<p class="notice"><%#= notice %></p>
+<p class="alert"><%#= alert %></p> -->
+<%#= render 'home/phone_numbers' %>
+
+
+  <!-- Page Content -->
+  <main id="main" class="site-main">
+    <div class="container" style="width:100%">
+
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+
+    <!-- /.container -->
+  </main>
+
+
+  <hr>
+  <%= render 'layouts/footer' %>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!--<script src="/assets/js/jquery.js"></script>-->
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="/assets/js/jquery.mobile-1.4.5.min.js"></script>
+
+
+<!--<script src="/assets/js/main.js"></script>-->
+
+
+<!-- Script to Activate the Carousel -->
+
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/slick/slick.min.js"></script>
+
+<script>
+    $(function () {
+        $('.fadein img:gt(0)').hide();
+        setInterval(function () {
+            $('.fadein :first-child').fadeOut(500).next('img').fadeIn(500).end().appendTo('.fadein');
+        }, 500);
+    });
+    $(function () {
+        $('.fadein2 img:gt(0)').hide();
+        setInterval(function () {
+            $('.fadein2 :first-child').fadeOut(4000).next('img').fadeIn(4000).end().appendTo('.fadein2');
+        }, 500);
+    });
+
+</script>
+
+<!--<script src="js/wow.min.js"></script>-->
+<!--<script>new WOW().init();</script>-->
+
+</body>
+</html>

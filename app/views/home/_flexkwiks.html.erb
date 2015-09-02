@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/assets/css/default-five-slides.css" type="text/css"/>
+
+
+<!-- Includes for this demo -->
+<link rel="stylesheet" href="/assets/css/demo-stuff/demo.css" type="text/css" media="screen"/>
+
+<!-- Hook up the FlexSlider -->
+
+
+<div id="container">
+  <h2>FlexSlider feat. Kwiks Demo</h2>
+
+  <div class="row">
+    <div class="col-md-4">
+
+      <% @services.each do |service| %>
+          <% if !service.image_file.blank? %>
+              <% service_img = 'assets/images/' + service.image_file %>
+          <% else %>
+              <% service_img = 'assets/images/eurautstretch.jpg' %>
+          <% end %>
+
+          <div class="col-md-4">
+            <img src="<%= service_img %>"/>
+
+            <div class="flex-caption">
+              <h3><%= service.name %></h3>
+
+              <p style="color: #fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In venenatis porttitor
+                massa eget pretium. Mauris vel erat sem, id tempor est. Pellentesque lobortis iaculis massa quis
+                auctor.</p>
+            </div>
+          </div>
+
+
+      <% end %>
+
+
+    </div>
+  </div>
+  <span id="responsiveFlag"></span>
+
+
