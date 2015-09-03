@@ -12,8 +12,6 @@
 /db/*.sqlite3-journal
 /config/database.yml
 /db/schema.rb
-Gemfile
-Gemfile.lock
 /log/*
 !/log/.keep
 /tmp
