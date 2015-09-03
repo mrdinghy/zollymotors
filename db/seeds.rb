@@ -34,32 +34,40 @@ manufacturers = Manufacturer.create([
 
 
 services = Service.create([
-                              { name: 'Scheduled Mileage Maintenance',
-                                    description: 'Networks. Appropriately impact world-class core competencies before bricks-and-clicks sources.',
-                                    image_file:  'set_dash.jpg'},
-                              { name: 'Technology-based Diagnosis',
-                                description: 'Collaboratively empower high-quality strategic theme areas through fully tested metrics. ',
-                                image_file: 'set_digital.jpg' },
 
-                              { name: 'Repairs',
-                                description: 'Professionally synthesize clicks-and-mortar total linkage for orthogonal manufactured products. ',
-                                image_file:  'set_repair.jpg' },
+                              {name : 'Scheduled Mileage Maintenance',
+    description : 'Networks. Appropriately impact world-class core competencies before bricks-and-clicks sources.',
+    service_icon : 'icon-speedometer',
+    image_file : 'set_dash.jpg'},
 
-                              { name: 'Pre-Purchase Inspection',
-                                description: 'Dramatically synthesize client-centered methodologies and resource-leveling e-tailers. Energistically simplify collaborative relationships for leveraged testing procedures. Assertively.',
-                                image_file: 'set_sale.jpg' },
+    {name : 'Technology-based Diagnosis',
+    description : 'Collaboratively empower high-quality strategic theme areas through fully tested metrics. ',
+    service_icon : 'icon-check',
+    image_file : 'set_digital.jpg'},
 
-                              { name: 'Certified Technicians',
-                                description: 'Appropriately impact stand-alone infomediaries for client-based scenarios. Credibly engage multidisciplinary "outside the box" thinking for go.',
-                                image_file: 'set_certify.jpg'
-                              },
+    {name : 'Repairs',
+    description : 'Professionally synthesize clicks-and-mortar total linkage for orthogonal manufactured products. ',
+    service_icon : 'icon-wrench',
+    image_file : 'set_repair.jpg'},
 
-                              { name: 'Complete Body Repair',
-                                description: 'Competently exploit error-free alignments through backward-compatible growth strategies. Synergistically pontificate resource sucking e-services via client-based platforms. Globally fashion.',
-                                image_file: 'set_body.jpg' }
+    {name : 'Pre-Purchase Inspection',
+    description : 'Dramatically synthesize client-centered methodologies and resource-leveling e-tailers. Energistically simplify collaborative relationships for leveraged testing procedures. Assertively.',
+    service_icon : 'icon-magnifier',
+    image_file : 'set_sale.jpg'},
+
+    {name : 'Certified Technicians',
+    description : 'Appropriately impact stand-alone infomediaries for client-based scenarios. Credibly engage multidisciplinary "outside the box" thinking for go.',
+    service_icon : 'icon-users',
+    image_file : 'set_certify.jpg'
+},
+
+    {name : 'Complete Body Repair',
+    description : 'Competently exploit error-free alignments through backward-compatible growth strategies. Synergistically pontificate resource sucking e-services via client-based platforms. Globally fashion.',
+    service_icon : 'fa fa-automobile',
+    image_file : 'set_body.jpg'}
 
 
-                          ])
+])
 
 
 siteblurbs = Siteblurb.create([
