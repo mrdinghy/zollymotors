@@ -58,8 +58,8 @@ services = Service.create([
     {name : 'Certified Technicians',
     description : 'Appropriately impact stand-alone infomediaries for client-based scenarios. Credibly engage multidisciplinary "outside the box" thinking for go.',
     service_icon : 'icon-users',
-    image_file : 'set_certify.jpg'
-},
+    image_file : 'set_certify.jpg'},
+
 
     {name : 'Complete Body Repair',
     description : 'Competently exploit error-free alignments through backward-compatible growth strategies. Synergistically pontificate resource sucking e-services via client-based platforms. Globally fashion.',
