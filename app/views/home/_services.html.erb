@@ -10,10 +10,10 @@
 
         <% @services.each do |service| %>
             <% imgset= '/assets/images/' + service.image_file %>
-            <div class="col-md-3 col-sm-1" style="text-align: center">
-              <img src="<%= imgset %>" width="220"><br>
+            <div class="col-md-4 col-sm-1" style="text-align: center">
+              <!---<img src="<%= imgset %>" width="220"><br>-->
 
-              <!--<em class="<%#= service.service_icon %>" style="font-size: 48px;"></em><br>-->
+              <em class="<%= service.service_icon %>" style="font-size: 48px;"></em><br>
               <span class="ss32"><%= service.name %></span>
 
             </div>
