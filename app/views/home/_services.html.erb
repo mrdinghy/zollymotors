@@ -1,21 +1,44 @@
 <!-- SERVICES -->
+
+
+<style>
+    .servicelink a {
+        color: blue;
+           }
+
+
+    .servicelink a.current:hover {
+        background: #ccc;
+    }
+
+    .servicelink a:hover {
+        background: #ccc;
+    }
+
+    .servicelink a:focus {
+        background: #ccc;
+    }
+
+</style>
+
+
 <section id="services">
   <div class="container">
 
     <div class="row">
 
 
-      <div class="col-md-12 artisan art32">
+      <div class="col-md-12">
 
 
         <% @services.each do |service| %>
             <% imgset= '/assets/images/' + service.image_file %>
             <div class="col-md-4 col-sm-1" style="text-align: center">
-              <!---<img src="<%= imgset %>" width="220"><br>-->
+               <%= link_to service do %>
 
               <em class="<%= service.service_icon %>" style="font-size: 48px;"></em><br>
-              <span class="ss32"><%= service.name %></span>
-
+             <span class="ss32"><%= service.name %></span>
+<% end %>
             </div>
 
         <% end %>

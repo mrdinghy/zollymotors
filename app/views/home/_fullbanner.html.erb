@@ -88,10 +88,10 @@
                 <img src="<%= service_img %>" width="800">
 
                 <div class="carousel-caption">
-                  <h3><%= service.name %><br>
-                    <small><a href="#philosophy">...read more</a></small>
+                  <%= link_to service do %><h3><%= service.name %><br>
+                   <small>...read more</small>
                   </h3>
-
+                  <% end %>
                   <!-- <%# if service.id == 9 %>
                                     <p><span style="color: #fff; font-size: 12px"><%#= service.description %><</span></p>
                                 <%# else %>
