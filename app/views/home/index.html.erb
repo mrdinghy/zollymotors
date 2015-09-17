@@ -1,11 +1,57 @@
 
+
+
+
+
+
+
+
+
 <%= render 'home/about' %>
+<%#= render 'home/modaltest1' %>
+
 <%= render 'home/fullbanner' %>
 <%= render 'home/services' %>
 <%= render 'home/directions' %>
 
-<%= render 'home/contact' %>
-<%= render 'home/philosophy' %>
+<%#= render 'home/contact' %>
+<%#= render 'home/philosophy' %>
 
 
+
+
+
+
+<% @services.each do |service| %>
+    <% modaltarget = 'myModal-' + service.id.to_s %>
+    <div class="modal fade" id="<%= modaltarget %>">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <span class="ss24"><%= service.name %></span>
+
+          </div>
+          <div class="modal-body" style="padding:0px; margin:0px width: 560px;">
+            <% if !service.image_file.blank? %>
+                <% service_img = '/assets/images/' + service.image_file %>
+            <% else %>
+                <% service_img = '/assets/images/eurautstretch.jpg' %>
+            <% end %>
+
+            <img width="100" class="img-responsive" src="<%= service_img %>" alt="">
+
+
+
+            <!--<iframe src="" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; " frameborder="0" height="400" width="560"></iframe>-->
+
+            <p><%= service.description %></p>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
 

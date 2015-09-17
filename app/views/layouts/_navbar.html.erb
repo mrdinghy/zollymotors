@@ -8,13 +8,17 @@
         <span class="icon-bar"></span>
       </button>
       <div class="logo"><img src="/assets/images/ss22.png" height="65"/>
-        <span class="ss40" style="vertical-align: middle; color: #fff; line-height: .9;">Specialty Services</span><Br>
+        <span class="ss40" style="vertical-align: middle; color: #fff; line-height: .9;">Specialty Services</span>
 
       </div>
 
-    </div>
+<!--      <div class="ss-phones">
+        <div>703-522-2638</div>
+        <div>703-525-1122</div>
+      </div>-->
     <!--<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo"></a>-->
 
+    </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active">
@@ -25,22 +29,13 @@
 
 
         <li>
-          <a href="#services">Services</a>
-        </li>
-        <li>
-          <%= link_to advise_path do %>
-              Advice
-          <% end %>
-        </li>
-
-        <li>
           <%#= link_to contact_path do %>
           <a href="#directions">Directions</a>
           <%# end %>
 
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a data-target="#contact" href="#" data-toggle="modal" type="button">Contact</a>
         </li>
         <!--<li><a href="#portfolio">Cars</a></li>-->
         <!--<li><a href="#blog">Blog</a></li>-->
@@ -50,6 +45,58 @@
   </div>
 </div>
 
+
+
+
+
+<div class="modal fade" id="contact">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3><span class="ss">Contact Us</span></h3>
+
+      </div>
+      <div class="modal-body" style="padding:0px; margin:0px width: 560px;">
+
+
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Full Name:</label>
+              <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Phone Number:</label>
+              <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Email Address:</label>
+              <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Message:</label>
+              <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+            </div>
+          </div>
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

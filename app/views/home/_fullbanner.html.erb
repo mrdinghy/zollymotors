@@ -46,24 +46,33 @@
     background: #666;
     }        */
 </style>
+
+
+
+
+
+
+
+
+
 <section id="slider">
   <div class="container">
     <div class="row">
 
 
       <div class="col-md-2" style="font-size:24px; text-align: center; vertical-align: top">
-        <img src="/assets/images/ase_cert2.gif"><br>
-        <br>
 
+
+        <small>Expertise in the repair of...</small>
         <% @cars.each do |car| %>
             <!--<em class="fa fa-circle" style="font-size: 8px; color: #fff"></em>-->
-            <%= car.name %> <span style="color: #ccc">|</span>
+            <%= car.name %> <span style="color: #999">-</span>
         <% end %>
-
-
+        <br>
+       <img src="/assets/images/ase_cert2.gif"><br>
       </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-interval="3000" data-ride="carousel">
         <div class="carousel-inner">
@@ -76,6 +85,9 @@
           </div>
 
           <% servicecount = 0 %>
+
+
+
           <% @services.each do |service| %>
               <div class="item">
                 <% if !service.image_file.blank? %>
@@ -83,15 +95,17 @@
                 <% else %>
                     <% service_img = 'assets/images/eurautstretch.jpg' %>
                 <% end %>
+                <% modaltarget = '#myModal-' + service.id.to_s %>
                 <!--<div class="fill" style="background-image:url(<%#= service_img %>);"></div>-->
 
                 <img src="<%= service_img %>" width="800">
 
-                <div class="carousel-caption">
-                  <%= link_to service do %><h3><%= service.name %><br>
-                   <small>...read more</small>
+                <div class="carousel-caption slidecaption" style="color: #fff;">
+                 <h3><%= service.name %></h3>
+                 <a data-target="<%= modaltarget %>" href="#" data-toggle="modal" type="button"><i class="mce-ico mce-i-browse"></i>more </a>
+                   <!-- <div style="font-size: 12px;">..read more</div>
                   </h3>
-                  <% end %>
+
                   <!-- <%# if service.id == 9 %>
                                     <p><span style="color: #fff; font-size: 12px"><%#= service.description %><</span></p>
                                 <%# else %>
@@ -115,12 +129,42 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-5">
       <h3><span class="ss">Let our 45 Years of Experience Work for You</a></span></h3>
 
 
       <div class="z_justify">
+        <p style="color: #fff;">As an alternative to dealer servicing and maintenance that is often impersonal, over-priced, and sometimes
 
+          un-necessary, our goal is to provide professional, personalized, reasonable and fixed price (as opposed to
+          an
+
+          hourly charge) service and maintenance for your vehicle and in a timely manner, as if you were a member of
+          our
+
+          own
+
+          family. By providing complete and accurate estimates for repairs and maintenance that are only performed
+          with
+
+          your approval we are able to return your vehicle to you in a timely manner and in safe and reliable
+          operating
+
+          condition. We do not believe in re-building your vehicle to new condition at every visit, nor to performing
+
+          routine maintenurely as either can add considerably to your maintenance and repair costs over the
+
+          life of your vehicle ownership.</p>
+
+
+        <p style="color: #fff;">We are a 40 year old family owned business specializing in the repair of European automobiles. In our
+          efforts
+
+          to provide a full-service facility our clean, fully equipped shop allows our ASE nationally certified
+
+          technicians to provide expert servicing on your vehicle utilizing the latest in equipment and training.</p>
+
+<!--
         <p style="color: #fff;">As an alternative to dealer servicing and maintenance, our goal is to provide
           professional and
           personalized service and maintenance for your vehicle. We provide complete and accurate estimates for repairs
@@ -136,7 +180,7 @@
           automobiles. Our ASE nationally-certified
 
           technicians provide expert servicing on your vehicle utilizing the latest diagnostics, equipment and
-          training.</p>
+          training.</p>-->
 
 
       </div>

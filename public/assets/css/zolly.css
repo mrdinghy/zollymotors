@@ -51,8 +51,12 @@
 }
 
 .ss-phones {
+    text-align: center;
     font-family: 'Droid Sans Mono';
-    font-size: 32px;
+    font-size: 42px;
+    color: #7A2900;
+    font-weight: bold;
+    line-height: 1.0;
 }
 
 .fadein {
@@ -122,4 +126,27 @@ div.cars-static {
 
 .car2 {
     color: #666666;
+}
+
+.slidecaption a {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slidecaption .current {
+    background: #ccc;
+}
+
+.slidecaption a.current:hover {
+    background: #ccc;
+}
+
+.slidecaption a:hover {
+    background: ccc;
+    color: #ffcccc;
+}
+
+.slidecaption a:focus {
+    background: #ccc;
 }

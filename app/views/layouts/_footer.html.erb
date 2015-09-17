@@ -23,7 +23,11 @@
                       Reviews
                   <% end %>
                 </li>
-
+              <li>
+                <%= link_to services_path do %>
+                    Services
+                <% end %>
+              </li>
               <% if user_signed_in? %>
                 <li>
                   <a class="accordion-toggle" href="#usermenu" data-toggle="collapse">

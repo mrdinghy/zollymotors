@@ -28,22 +28,36 @@
     <div class="row">
 
 
-      <div class="col-md-12">
+
 
 
         <% @services.each do |service| %>
+          <% modaltarget = '#myModal-' + service.id.to_s %>
             <% imgset= '/assets/images/' + service.image_file %>
-            <div class="col-md-4 col-sm-1" style="text-align: center">
-               <%= link_to service do %>
+            <div class="col-md-4" style="text-align: center">
+              <div style="padding-top: 20px; padding-bottom:10px;">
 
-              <em class="<%= service.service_icon %>" style="font-size: 48px;"></em><br>
-             <span class="ss32"><%= service.name %></span>
-<% end %>
+                <a data-target="<%= modaltarget %>" href="#" data-toggle="modal" type="button">
+                  <em class="<%= service.service_icon %>" style="font-size: 48px;"></em><br>
+                  <span class="ss32"><%= service.name %></span>
+
+                </a>
+
+
+
+
+                <%#= link_to service do %>
+
+                      <!--<em class="<%#= service.service_icon %>" style="font-size: 48px;"></em><br>
+                     <span class="ss32"><%#= service.name %></span>-->
+
+                <%# end %>
             </div>
+          </div>
 
         <% end %>
 
-      </div>
+
     </div>
 
   </div>
