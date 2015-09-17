@@ -130,7 +130,7 @@ div.cars-static {
 
 .slidecaption a {
     color: #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -149,4 +149,16 @@ div.cars-static {
 
 .slidecaption a:focus {
     background: #ccc;
+}
+
+
+.readmore {
+    background: #666;
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+    color: #fff;
 }
