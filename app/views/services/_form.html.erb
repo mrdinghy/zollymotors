@@ -1,12 +1,82 @@
-<%= simple_form_for(@service) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-  </div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <!--<div class="panel-heading">
+        Add Review
+      </div>-->
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="form-horizontal">
+              <%= simple_form_for(@service) do |f| %>
+                  <%#= hidden_field_tag(:user_id, current_user.id) %>
+                  <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Service Title</label>
+                    <div class="col-sm-8">
+                      <%= f.input :name, :label => false, :class => "form-control" %>
+
+
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Service Title</label>
+                    <div class="col-sm-8">
+
+                      <%= f.input :description , :label => false, :class => "form-control", :input_html => { :rows => 10 , :cols => 50 } %>
+
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Icon Name</label>
+                    <div class="col-sm-8">
+
+                      <%= f.input :service_icon , :label => false, :class => "form-control" %>
+
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Service Image</label>
+                    <div class="col-sm-8">
+
+                      <%= f.input :image_file , :label => false, :class => "form-control" %>
+                      <small>This will be changed to a user supplied file upload if needed</small>
+                    </div>
+
+                  </div>
+
+
+
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                      <%= f.button :submit, :class => "btn btn-primary" %>
+                    </div>
+                  </div>
+
+
+              <% end %>
+            </div>
+          </div>
+          <!-- /.col-lg-6 (nested) -->
+
+        </div>
+        <!-- /.row (nested) -->
+      </div>
+      <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
   </div>
-<% end %>
+  <!-- /.col-lg-12 -->
+</div>
+
+
+

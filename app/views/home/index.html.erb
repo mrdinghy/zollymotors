@@ -32,20 +32,20 @@
             <span class="ss24"><%= service.name %></span>
 
           </div>
-          <div class="modal-body" style="padding:0px; margin:0px width: 560px;">
+          <div class="modal-body" style="padding:10px; margin:0px width: 560px;">
             <% if !service.image_file.blank? %>
                 <% service_img = '/assets/images/' + service.image_file %>
             <% else %>
                 <% service_img = '/assets/images/eurautstretch.jpg' %>
             <% end %>
-
-            <img width="100" class="img-responsive" src="<%= service_img %>" alt="">
-
+            <div style="width: 350px;">
+            <img class="img-responsive" src="<%= service_img %>" alt="">
+            </div>
 
 
             <!--<iframe src="" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; " frameborder="0" height="400" width="560"></iframe>-->
 
-            <p><%= service.description %></p>
+            <p><br><%= service.description %></p>
 
 
 
